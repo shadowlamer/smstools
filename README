@@ -1,0 +1,6 @@
+sendsms <number> <test>
+	One of smstools example scripts
+
+ussd.sh <ussd>
+sms2utf7.sh <smsd incoming file>
+	Will produce <file>.utf8
