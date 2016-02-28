@@ -1,7 +1,7 @@
 #!/bin/bash
 
 modem=/dev/modem
-encode=$(dirname $0)/ussd7bit/ussdEncode
+encode=$(dirname $0)/ussd7bit/encode
 
 echo -e 'AT+CUSD=1,"'$($encode $1)'",15\r' > "$modem"
 #	---------------------------------------------------

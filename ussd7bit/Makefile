@@ -1,9 +1,26 @@
-
-SOURCE = ussdEncode.c
-LIBS = -lm
-TARGET = ussdEncode
-
+CC = gcc
 # add -g for debugging symbols
+REL_FLAGS = -Wall -Werror -W -O2
+DEB_FLAGS = -Wall -W -g
+CFLAGS = $(REL_FLAGS)
+#OPTIONS = -DDEBUG
+INCLUDES =
+LDFLAGS =
+LIBS = -lm
+TARGETS = encode decode
 
-all: $(SOURCE)
-	gcc -o $(TARGET) $(LIBS) $(SOURCE) && strip $(TARGET)
+all: $(TARGETS)
+
+$(TARGETS): %: %.o
+	@echo [LD] $@
+	@$(CC) $(CFLAGS) -o $@ $< $(LIBS) $(LDFLAGS)
+
+%.o: %.c
+	@echo [CC] $@
+	@$(CC) $(OPTIONS) $(CFLAGS) $(INCLUDES) -c -o $@ $<
+
+clean:
+	@echo [RM]
+	@rm -f *.o $(TARGETS)
+
+remake: clean all

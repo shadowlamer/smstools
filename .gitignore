@@ -8,4 +8,5 @@
 *.d
 
 # Binary
-ussdEncode
+encode
+decode

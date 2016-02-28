@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /*
 	1. Chop elder bit of each byte
@@ -41,5 +42,5 @@ main (int argc, char **argv)
 		printf("%02X", (unsigned char)output[i]);
 	printf("\n");
 	
-	return;
+	return 0;
 }
