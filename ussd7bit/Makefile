@@ -1,7 +1,7 @@
 CC = gcc
 # add -g for debugging symbols
-REL_FLAGS = -W -O2
-DEB_FLAGS = -W -g
+REL_FLAGS = -Wall -Werror -W -O2
+DEB_FLAGS = -Wall -W -g
 CFLAGS = $(REL_FLAGS)
 #OPTIONS = -DDEBUG
 INCLUDES =
